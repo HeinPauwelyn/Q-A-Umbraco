@@ -1,0 +1,28 @@
+﻿@using AlaQAndA.WebApp.Models
+@model IEnumerable<Question>
+
+@if (Model != null && Model.Count() != 0)
+{
+    <div class="container row">
+        @foreach (var q in Model)
+        {
+            <section class="col-md-6 question">
+                <h2>@q.Title</h2>
+                <p>@q.Description</p>
+            </section>
+        }
+    </div>
+}
+else
+{
+    <p>No questions solved.</p>
+}
+
+@using (Html.BeginUmbracoForm("New", "Questions"))
+{
+    <h2>New question and solution</h2>
+
+    <input type="text" name="title" placeholder="Title of your question" class="form-control"/>
+    <textarea placeholder="Content of your question" rows="10" name="content"  class="form-control" style="max-width: 100%;"></textarea>
+    <button class="btn btn-lg btn-primary btn-block" style="width: 100%; padding: 15px; border: none; background-color: #e7afa3">Ask question</button>
+}

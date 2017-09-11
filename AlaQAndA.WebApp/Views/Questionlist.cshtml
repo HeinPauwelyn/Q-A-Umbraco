@@ -1,0 +1,21 @@
+﻿@using AlaQAndA.WebApp.Models;
+
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Questionlist>
+
+@{
+    Layout = "Master.cshtml";
+}
+
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            @{
+                Html.RenderAction("index", "Questions");
+            }
+            </div>
+        </div>
+    </div>
+</section>
