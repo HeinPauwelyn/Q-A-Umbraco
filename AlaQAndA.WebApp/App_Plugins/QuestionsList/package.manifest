@@ -1,0 +1,21 @@
+﻿{
+	propertyEditors: [
+		{
+            "alias": "ALaQAndA.WebApp.Plugins.QuestionsList",
+            "name": "Questionslist",
+			"icon": "icon-item-arrangement",
+			"group": "custom editors",
+            "editor": {
+                "view": "~/App_Plugins/QuestionsList/backoffice/questionTree/overviewQuestion.html",
+                "hideLabel": true,
+                "valueType": "JSON"
+            }
+        }
+	],
+	parameterEditors:[],
+	javascript: [
+		'~/App_Plugins/QuestionsList/Resources/question.resource.js',
+		'~/App_Plugins/QuestionsList/Controller/question.overview.controller.js'
+	],
+	css: []
+}

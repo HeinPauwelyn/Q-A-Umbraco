@@ -46,6 +46,15 @@ namespace AlaQAndA.WebApp.Models
 		}
 
 		///<summary>
+		/// Questions
+		///</summary>
+		[ImplementPropertyType("questions")]
+		public Newtonsoft.Json.Linq.JToken Questions
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("questions"); }
+		}
+
+		///<summary>
 		/// Content
 		///</summary>
 		[ImplementPropertyType("bodyText")]

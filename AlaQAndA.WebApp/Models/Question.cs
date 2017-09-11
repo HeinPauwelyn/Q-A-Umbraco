@@ -7,20 +7,32 @@ using Umbraco.Core.Models.PublishedContent;
 
 namespace AlaQAndA.WebApp.Models
 {
-    public class Question : PublishedContentModel
+    public class Question
     {
+        public int ID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
 
-        public Question(IPublishedContent content)
-            : base(content)
-        { }
-
-        public Question(string title, string description) 
-            : this (null)
+        public Question(string title, string description)
         {
             Title = title;
+            Description = description;  
+        }
+
+        public Question(int id, string title, string description)
+        {
+            ID = id;
+            Title = title;
             Description = description;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Question)
+            {
+                return (obj as Question).ID == ID;
+            }
+            return false;
         }
     }
 }

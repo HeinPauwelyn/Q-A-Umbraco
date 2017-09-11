@@ -344,6 +344,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\QuestionsList\backoffice\questionTree\overviewQuestion.html" />
+    <Content Include="App_Plugins\QuestionsList\Controller\question.overview.controller.js" />
+    <Content Include="App_Plugins\QuestionsList\Resources\question.resource.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -358,6 +361,7 @@
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="App_Plugins\QuestionsList\package.manifest" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -416,6 +420,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Questions\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -455,7 +460,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\QuestionsApiController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Helpers\ConstantString.cs" />
+    <Compile Include="ServerVariableParserEvent.cs" />
+    <Compile Include="Service\QuestionService.cs" />
     <Compile Include="Models\Blog.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -514,7 +523,6 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Question.cs" />
-    <Compile Include="Models\Questionlist.cs" />
     <Compile Include="Models\Questionlist.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -526,7 +534,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Generated\" />
-    <Folder Include="Views\Question\" />
+    <Folder Include="Section\" />
+    <Folder Include="Views\QuestionTree\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

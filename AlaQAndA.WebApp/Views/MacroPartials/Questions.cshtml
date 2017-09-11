@@ -4,13 +4,21 @@
 @if (Model != null && Model.Count() != 0)
 {
     <div class="container row">
-        @foreach (var q in Model)
-        {
-            <section class="col-md-6 question">
-                <h2>@q.Title</h2>
-                <p>@q.Description</p>
-            </section>
-        }
+        <table class="table table-striped" style="width: 100%;">
+            <tr>
+                <th style="padding: 5px; border-bottom: solid 1px black;">Title</th>
+                <th style="padding: 5px; border-bottom: solid 1px black;">User</th>
+                <th style="padding: 5px; border-bottom: solid 1px black;">Date</th>
+            </tr>
+            @foreach (var q in Model)
+            {
+                <tr>
+                    <td style="padding: 5px; border-bottom: solid 1px black;"><a href="~/questions/details/@q.ID">@q.Title</a></td>
+                    <td style="padding: 5px; border-bottom: solid 1px black;">Me Myself and I</td>
+                    <td style="padding: 5px; border-bottom: solid 1px black;">1 minute ago</td>
+                </tr>
+            }
+        </table>
     </div>
 }
 else
